@@ -129,16 +129,3 @@ index 74ebeafd3c1..528c1f60475 100644
        /* toolbar support */
        [self createToolbar:f];
  
-@@ -9345,9 +9404,9 @@ - (instancetype) initWithEmacsFrame: (struct frame *) f
-     {
-       [self setTitlebarAppearsTransparent:YES];
-       [self setTitleVisibility:NSWindowTitleHidden];
--      [[self standardWindowButton:NSWindowCloseButton] setHidden:YES];
--      [[self standardWindowButton:NSWindowMiniaturizeButton] setHidden:YES];
--      [[self standardWindowButton:NSWindowZoomButton] setHidden:YES];
-+      // [[self standardWindowButton:NSWindowCloseButton] setHidden:YES];
-+      // [[self standardWindowButton:NSWindowMiniaturizeButton] setHidden:YES];
-+      // [[self standardWindowButton:NSWindowZoomButton] setHidden:YES];
-     }
- 
-   return self;
