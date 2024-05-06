@@ -102,7 +102,7 @@ class EmacsPlusAT30 < EmacsBase
   local_patch "poll", sha: "31b76d6a2830fa3b6d453e3bbf5ec7259b5babf1d977b2bf88a6624fa78cb3e6" if build.with? "poll"
   local_patch "round-undecorated-frame", sha: "7451f80f559840e54e6a052e55d1100778abc55f98f1d0c038a24e25773f2874"
   local_patch "alpha-background", sha: "5d045f4a13aedc0a76f04192d181d05a7e13544d5ac53392c87ee73244153609" 
-  local_patch "blur", sha: "c8283bd4068dfa09e042239dff98c7e4869fd9d37af3930ebc918141d4dac0af"
+  local_patch "blur", sha: "5f0906b3c60a47088f9e74246ad14b27d784495ce1ddfee495eecb52f54edbe4"
 
   #
   # Initialize
