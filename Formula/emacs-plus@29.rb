@@ -94,7 +94,7 @@ class EmacsPlusAT29 < EmacsBase
   local_patch "poll", sha: "052eacac5b7bd86b466f9a3d18bff9357f2b97517f463a09e4c51255bdb14648" if build.with? "poll"
   local_patch "round-undecorated-frame", sha: "7451f80f559840e54e6a052e55d1100778abc55f98f1d0c038a24e25773f2874"
   local_patch "alpha-background", sha: "922d9c5cd7deebd16773d354150faa8a5e69d998651cb2e956d9ed600232b4bc" 
-  local_patch "blur", sha: "c8283bd4068dfa09e042239dff98c7e4869fd9d37af3930ebc918141d4dac0af"
+  local_patch "blur", sha: "7a9eaff3e1d88242b3184976dedf27462101d859f00c2e8ea87352abc6b80b16"
 
   #
   # Initialize

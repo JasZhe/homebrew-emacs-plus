@@ -34,18 +34,6 @@ diff --git a/src/nsterm.m b/src/nsterm.m
 index 74ebeafd3c1..528c1f60475 100644
 --- a/src/nsterm.m
 +++ b/src/nsterm.m
-@@ -9252,10 +9252,7 @@ - (instancetype) initWithEmacsFrame: (struct frame *) f
- 		 | NSWindowStyleMaskMiniaturizable
- 		 | NSWindowStyleMaskClosable);
- 
--  if (FRAME_UNDECORATED_ROUND (f))
--    {
--      styleMask |= NSFullSizeContentViewWindowMask;
--    }
-+  styleMask |= NSWindowStyleMaskFullSizeContentView;
- 
-   last_drag_event = nil;
- 
 @@ -9275,7 +9272,62 @@ - (instancetype) initWithEmacsFrame: (struct frame *) f
        EmacsView *view = FRAME_NS_VIEW (f);
  
