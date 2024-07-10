@@ -27,6 +27,8 @@ class EmacsPlusAT30 < EmacsBase
   option "with-native-comp", "Build with native compilation"
   option "with-compress-install", "Build with compressed install optimization"
   option "with-poll", "Experimental: use poll() instead of select() to support > 1024 file descriptors`"
+  option "with-alpha-background", "Experimental: build with alpha-background"
+  option "with-blur-background", "Experimental: build with blur-background"
 
   #
   # Dependencies
@@ -101,6 +103,14 @@ class EmacsPlusAT30 < EmacsBase
   local_patch "system-appearance", sha: "9eb3ce80640025bff96ebaeb5893430116368d6349f4eb0cb4ef8b3d58477db6"
   local_patch "poll", sha: "31b76d6a2830fa3b6d453e3bbf5ec7259b5babf1d977b2bf88a6624fa78cb3e6" if build.with? "poll"
   local_patch "round-undecorated-frame", sha: "7451f80f559840e54e6a052e55d1100778abc55f98f1d0c038a24e25773f2874"
+
+  if build.with? "alpha-background"
+    local_patch "alpha-background", sha: "5d045f4a13aedc0a76f04192d181d05a7e13544d5ac53392c87ee73244153609"
+  end
+
+  if build.with? "blur-background"
+    local_patch "blur", sha: "b25144e6882e930650645fca62b20480a213e8498461f944630a38bc99dbe0a6"
+  end
 
   #
   # Initialize
