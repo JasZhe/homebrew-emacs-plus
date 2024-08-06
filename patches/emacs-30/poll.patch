@@ -610,8 +610,8 @@ index 6b8b483cdf7..d9a158ef651 100644
  		   to be accurate, just positive is enough. */
 -		for (channel = 0; channel < FD_SETSIZE; ++channel)
 +		for (channel = 0; channel < EMACS_MAX_FD; ++channel)
- 		  if (FD_ISSET (channel, &tls_available))
- 		    FD_SET (channel, &Available);
+ 		  if (FD_ISSET(channel, &tls_available))
+ 		    FD_SET(channel, &Available);
  	    }
 @@ -6163,7 +6268,7 @@ read_process_output (Lisp_Object proc, int channel)
  {
