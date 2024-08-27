@@ -4,10 +4,6 @@ class EmacsPlusAT31 < EmacsBase
   init 31
   version "31.0.50"
 
-  on_macos do
-    env :std
-  end
-
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
 
@@ -112,21 +108,10 @@ class EmacsPlusAT31 < EmacsBase
   end
 
   #
-  # Initialize
-  #
-  def initialize(*args, **kwargs, &block)
-    a = super
-    expand_path
-    a
-  end
-
-  #
   # Install
   #
 
   def install
-    expand_path
-
     args = %W[
       --disable-dependency-tracking
       --disable-silent-rules
@@ -138,7 +123,7 @@ class EmacsPlusAT31 < EmacsBase
     args << "--with-xml2"
     args << "--with-gnutls"
 
-    args << "--with-native-compilation" if build.with? "native-comp"
+    args << "--with-native-compilation=aot" if build.with? "native-comp"
     args << "--without-compress-install" if build.without? "compress-install"
 
     ENV.append "CFLAGS", "-g -Og" if build.with? "debug"
@@ -187,9 +172,6 @@ class EmacsPlusAT31 < EmacsBase
     args << "--without-pop" if build.with? "mailutils"
     args << "--with-xwidgets" if build.with? "xwidgets"
 
-    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["gnu-tar"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["grep"].opt_libexec/"gnubin"
     system "./autogen.sh"
 
     if (build.with? "cocoa") && (build.without? "x11")
