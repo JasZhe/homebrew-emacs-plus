@@ -40,6 +40,7 @@ class EmacsPlusAT30 < EmacsBase
   depends_on "pkg-config" => :build
   depends_on "texinfo" => :build
   depends_on "xz" => :build
+  depends_on "m4" => :build 
   depends_on "gnutls"
   depends_on "librsvg"
   depends_on "little-cms2"
