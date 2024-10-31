@@ -78,6 +78,8 @@ class EmacsBase < Formula
     app = "#{prefix}/Emacs.app"
     plist = "#{app}/Contents/Info.plist"
 
+    system "/usr/libexec/PlistBuddy -c 'Add NSBluetoothAlwaysUsageDescription string' '#{plist}'"
+    system "/usr/libexec/PlistBuddy -c 'Set NNSBluetoothAlwaysUsageDescription Emacs requires permission to access the Bluetooth.' '#{plist}'"
     system "/usr/libexec/PlistBuddy -c 'Add NSCameraUsageDescription string' '#{plist}'"
     system "/usr/libexec/PlistBuddy -c 'Set NSCameraUsageDescription Emacs requires permission to access the Camera.' '#{plist}'"
     system "/usr/libexec/PlistBuddy -c 'Add NSMicrophoneUsageDescription string' '#{plist}'"
