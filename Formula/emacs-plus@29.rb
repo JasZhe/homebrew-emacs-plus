@@ -261,7 +261,6 @@ class EmacsPlusAT29 < EmacsBase
         (man1/"ctags.1").unlink
       end
     end
-    args << "--with-poll" if build.with? "poll"
   end
 
   def post_install
@@ -280,7 +279,7 @@ class EmacsPlusAT29 < EmacsBase
         #{prefix}
 
       To link the application to default Homebrew App location:
-        osascript -e 'tell application "Finder" to make alias file to posix file "#{prefix}/Emacs.app" at POSIX file "/Applications" with properties {name:"Emacs.app"}'
+        osascript -e 'tell application "Finder" to make alias file to posix file "#{prefix}/Emacs.app" at posix file "/Applications" with properties {name:"Emacs.app"}'
 
       Your PATH value was injected into Emacs.app/Contents/Info.plist
 
