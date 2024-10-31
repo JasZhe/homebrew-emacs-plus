@@ -167,6 +167,7 @@ class EmacsPlusAT29 < EmacsBase
     args << "--with-rsvg"
     args << "--without-pop" if build.with? "mailutils"
     args << "--with-xwidgets" if build.with? "xwidgets"
+    args << "--with-poll" if build.with? "poll"
 
     system "./autogen.sh"
 

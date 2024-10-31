@@ -172,6 +172,7 @@ class EmacsPlusAT30 < EmacsBase
     args << "--with-webp"
     args << "--without-pop" if build.with? "mailutils"
     args << "--with-xwidgets" if build.with? "xwidgets"
+    args << "--with-poll" if build.with? "poll"
 
     system "./autogen.sh"
 
